@@ -45,13 +45,10 @@ public class ShopFacade extends AbstractFacade<Shop> {
     }
 
     public boolean check(String shopName) {
-        Shop shop = em.createNamedQuery("Shop.findByShopName", Shop.class)
+        List<Shop> shopList = em.createNamedQuery("Shop.findByShopName", Shop.class)
                 .setParameter("shopName", shopName)
-                .getResultList().get(0);
-        if (shop != null) {
-            return false;
-        }
-        return true;
+                .getResultList();
+        return shopList.isEmpty();
     }
 
 }
