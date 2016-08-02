@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="jp"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="./WEB-INF/template/layoutTemplate.xhtml">
+        <ui:define name="title">店舗詳細</ui:define>
+
+        <ui:define name="content">
+            <div id="messageArea"> <span> <h:outputText value="#{shopViewBean.message}"/> </span> </div>
+
+            <div id="registerForm">
+                <h:form>
+                    <div class="label">店舗名：</div>
+                    <div class="input"><h:inputText value="#{shopViewBean.shop.shopName}" /></div>
+                    <div class="label">店舗住所1：</div>
+                    <div class="input"><h:inputText value="#{shopViewBean.shop.shopAddress1}"/></div>
+                    <div class="label">店舗住所2：</div>
+                    <div class="input"><h:inputText value="#{shopViewBean.shop.shopAddress2}"/></div>
+                    <div class="label">店舗URL：</div>
+                    <div class="input"><h:inputText value="#{shopViewBean.shop.shopUrl}"/></div>
+                    <div class="buttonGroup">
+                        <div class="button"><h:commandButton action="#{shopEditBean.thumbUp()}" value="いいね" /> </div>
+                        <div class="button"><h:commandButton action="#{shopEditBean.deleteShop()}" value="削除" /> </div>
+                        <div class="button"><h:commandButton action="#{shopEditBean.updateShop()}" value="更新" /> </div>
+                    </div>
+                </h:form>
+
+            </div>
+        </ui:define>
+
+    </ui:composition>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="./resources/css/default.css"/>
+        <link type="text/css" rel="stylesheet" href="./resources/css/cssLayout.css"/>
+
+        <title><ui:insert name="title">Baccus!</ui:insert></title>
+
+        <style>
+            div#layout{
+                width:900px;
+                margin: 20px auto;
+            }
+            ul.menu{
+                height:20px;
+            }
+            ul.menu li{
+                float:left;
+                height:50px;
+                padding-left:10px;
+                display: inline;
+            }
+
+            div#registerForm{
+                width:80%;
+                margin:20px auto;
+                height:250px;
+            }
+            div.label{
+                float:left;
+                width:40%;
+                text-align: right;
+                padding-top:10px;
+                padding-right:5px
+            }
+            div.input{
+                float:left;
+                width:50%;
+                padding-top: 10px;
+            }
+            div.buttonGroup{
+                width:200px;
+                margin: 50px auto;
+            }
+            div.button{
+                float:left;
+                width:50%;
+                padding-top: 10px;
+            }
+
+            div#shoplist{
+                width:50%;
+                margin: 10px auto;
+            }
+
+        </style>
+    </h:head>
+
+    <h:body>
+        <div id="layout">
+            <div id="top">
+                <ui:insert name="top">  
+                    <ul class="menu">
+                        <li> <a href="/Bacchus">ホーム</a> </li>
+                        <li> <a href="/Bacchus/faces/shoplist.xhtml">店舗一覧</a> </li>
+                        <li> <a href="/Bacchus/faces/newshop.xhtml">新規登録</a> </li>
+
+                    </ul>
+                </ui:insert>
+            </div>
+
+            <div id="content" class="center_content">
+                <ui:insert name="content">Content</ui:insert>
+            </div>
+
+            <div id="bottom">
+                <ui:insert name="bottom">
+                    <div id="footer">
+                        Powered by Hitachi.
+                    </div>
+                </ui:insert>
+            </div>
+        </div>
+    </h:body>
+
+</html>
